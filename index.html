@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+            /* border: 2px solid black; */
+        }
+        .parent{
+            width: 100%;
+        }
+        .top{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 100px;
+            background: #196ac7;
+            /* padding: 10px; */
+            position: sticky;
+            top: 0px;
+            left: 0px;
+        }
+        .list{
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-item,.rightlist{
+            color: white;
+            list-style: none;
+            margin: 0px 20px 0px 0px;
+            /* padding: 10px; */
+        }
+        .time{
+            color: white;
+            margin: 0px 20px 0px 20px;
+            
+            padding: 10px;
+        }
+        .icon{
+            color: yellow;
+        }
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 100px ;
+
+        }
+        .left img{
+            width: 40px;
+        }
+        /* .logo img{
+            display: flex;
+            width: 40px;
+        } */
+       
+        .bottom-list{
+            display: flex;
+            align-items: center;
+            
+            
+        }
+        .item{
+            margin: 0px 0px 0px 80px;
+            list-style: none;
+            /* margin: 0px 20px 0px 20px; */
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 17px;
+            display: flex;
+            color: rgb(44, 42, 42);
+            font-weight: 20px;
+
+        }
+        .like{
+            padding: 5px;
+            background: #267de0;
+            color: white;
+            border-color: #267de0;
+            border-radius: 10%;
+        }
+        .like1{
+            color: white;
+            background: transparent;
+            border-color: #267de0;
+            width: 90px;
+            font-size: 12px;
+            text-transform: initial;
+            
+        }
+        .btn{
+            background: #267de0;
+            color: white;
+            border-color: #267de0;
+            width: 120px;
+            font-size: 12px;
+            text-transform: initial;
+            padding: 5px;
+            height: 40px;
+            border-radius: 10%;
+            border-color: black;
+            
+        }
+        /* .para{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            border-color: #267de0;
+        } */
+         .bottom{
+            box-shadow: 1px 1px 1px 1px rgb(189, 185, 185);
+        
+         }
+         .item:hover{
+            color: #267de0;
+            transform: scale(1.1);
+         }
+         .fa-bars{
+            display: none;
+         }
+         @media only screen and (max-width:1160px) {
+            .list-item{
+                font-size: 14px;
+            }
+            .time{
+                font-size: 14px;
+            }
+        }
+        @media only screen and (max-width:1150px) {
+            .fa-bars{
+            display: flex;
+            font-size: 20px;
+            color: #267de0;
+            padding: 5px;
+         }
+         .right{
+            display: none;
+         }
+
+        }
+        @media only screen and (max-width:710px) {
+            .icon{
+                font-size: 11px;
+            }
+            .time{
+                font-size: 11px;
+            }
+        }
+        @media only screen and (max-width:670px) {
+            /* .icon{
+                display: none;
+            }
+            .time{
+                display: none;
+            } */
+             .top{
+                display: none;
+             }
+            .left{
+                display: flex;
+            }
+            .fa-bars{
+                display: flex;
+            }
+        }
+        /* @media only screen and (max-width:1135px) {
+            .list-item{
+                font-size: 13px;
+            }
+            .time{
+                font-size: 13px;
+            }   
+         } */
+         @media only screen and (max-width:1100px) {
+            .rightlist{
+                display: none;
+            }
+            
+         }
+         .main{
+            background-image: url(./image.png);
+            background-size: cover;
+            height: 600px;
+            width: 100%;
+            font-size: x-large;
+         }
+         .heading{
+            color: white;
+            /* font-size: xx-large; */
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            padding: 120px 40px 10px 40px;
+            margin: 0px 50px;
+         }
+         .liveandcontactbtn{
+            padding: 0px 0px 0px 70px ;
+         }
+         .live-btn{
+            background: #267de0;
+            color: white;
+            border-color: #267de0;
+            width: 150px;
+            font-size: 12px;
+            text-transform: initial;
+            padding: 5px;
+            height: 50px;
+            border-radius: 10%;
+         }
+         .contact-button{
+            background: #f5e836;
+            color: rgb(63, 60, 60);
+            border-color: #f5e836;
+            width: 150px;
+            font-size: 12px;
+            text-transform: initial;
+            padding: 5px;
+            height: 50px;
+            border-radius: 10%;
+         }
+         
+         .welcome{
+            height: 300px;
+            box-shadow: 0px 0px 1px 1px grey;
+            text-align: center;
+         }
+         .line{
+            width: 80px;
+            height: 5px;
+            background: #000;
+            display: inline-block;
+            border-radius: 20px;
+        
+         }
+         .mobileapp{
+        /* position: fixed;  */
+        position: fixed; padding: 50px 0px;
+    }
+    .child{
+        position: absolute;
+        top: 200px;
+        left: 16px;
+        
+    }
+    .child1:hover{
+            /* color: #267de0; */
+            transform: scale(1.1);
+         }
+    .child2:hover{
+            /* color: #267de0; */
+            transform: scale(1.1);
+         }     
+    .services{
+        background-color: rgb(107, 107, 102);
+    }
+    .picAndReport{
+        border: 2px solid greenyellow;
+        padding: 0px 50px;
+        /* display: flex; */
+        align-items: center;
+        background-color: rgb(107, 107, 102);  
+    }
+    
+            
+
+    .picture1{
+      width: 50%;
+        background:pink;
+        
+        height: 400px;
+        float: left;
+    }
+    .second{
+        width: 50%;
+        background:white;
+        height: 400px;
+        float: right;
+    }
+    .picture2{
+      width: 50%;
+        background:pink;
+        
+        height: 400px;
+        float: right;
+    }
+    .third{
+        width: 50%;
+        background:white;
+        height: 400px;
+        float:left;
+    }
+    .picture3{
+      width: 50%;
+        background:pink;
+        
+        height: 400px;
+        float: left;
+    }
+    .fourth{
+        width: 50%;
+        background:white;
+        height: 400px;
+        float: right;
+    }
+    .picture4{
+      width: 50%;
+        background:pink;
+        
+        height: 400px;
+        float: right;
+    }
+    .fifth{
+        width: 50%;
+        background:white;
+        height: 400px;
+        float:left;
+    }
+    .ourser{
+        flex-basis: 100%;
+        height: 100%;
+        border: 5px solid red;
+    }
+    @media only screen and (max-width:800px) {
+            .second{
+                float: left;
+            }
+            
+         }
+    
+    .learn{
+        margin: 0px 0px 0px 20px; color: black;text-decoration: none;
+    }
+    .learn:hover {
+        border-bottom:  2px solid black;
+    }
+    .services{
+        background: rgb(250, 250, 250);
+    }
+    .hireandDouble{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        padding: 0px 40px;
+
+        
+    }
+    .WriteandKeep{
+        justify-content: center;
+        display: flex;
+        padding: 0px 40px;
+        /* align-items: center; */
+    }
+    .work-heading{
+        color:#0f56a7; font-family:Arial, Helvetica, sans-serif;
+        font-size: 20px;
+         padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;
+    }
+    .contact{
+        /* display: flex;
+        align-items: center; */
+        background: #267de0;
+        height: 170px;
+    }
+    .contact-btn{
+        background: #fdfeff;
+            color: rgb(14, 13, 13);
+            border-color: #267de0;
+            width: 140px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: initial;
+            padding: 5px;
+            height: 40px;
+            border-radius: 30px;
+            border-color: transparent;
+
+    }
+   
+    .workChild{
+        
+        flex-basis: 50%;
+    }
+    .guaranteeChild{
+        text-align: center;
+    }
+    .call{
+        background:#3374b3;
+        /* display: flex;
+        width: 100%;
+        /* justify-content:space-evenly; */
+        height: 300px;
+        width: 100%;
+        /* padding: 10px 40px; */
+    }
+    /* .req{
+        margin: 20px;
+        border:2px solid #f5e836;
+        border-radius: 5%;
+        width: 50%;
+    }
+    .info{
+        padding: 5px;
+        width: 250px;
+        height: 35px;
+        border-radius: 5px;
+        margin: 10px;
+    } */ 
+     .member{
+        width: 100%;
+        /* height: 100%; */
+        border: 2px solid blue;
+     }
+     .member-pic{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px;
+     }
+     .member-name {
+        flex-basis: 25%;
+        border: 2px solid black;
+        text-align: center;
+        margin: 0px 15px;
+     }
+     .terms{
+        /* border: 4px solid purple; */
+        display: flex;
+        background: #5c6a80;
+        width: 100%;
+        padding: 0px 80px;
+        /* justify-content: space-evenly; */
+     }
+     .homeandcond{
+        margin-right: 10px;
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+     }
+     .list2 li,.list1 li{
+        /* border: 2px solid black; */
+        padding: 5px;
+        list-style: none;
+        font-size: larger;
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: normal;
+     }
+     @media only screen and (max-width:800px) {
+            .terms{
+            display: block;
+         }
+         .homeandcond{
+            display:flex;
+         }
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="parent">
+        <div class="top">
+            <ul class="list">
+            <li class="list-item rightlist">
+                <i class="fa-solid fa-location-dot icon"></i>
+                60 Peach Street, Wokingham RG4 OIXG, Berkshire, UK
+            </li>
+            <li class="list-item">
+                <i class="fa-brands fa-whatsapp icon"></i>
+                Sales: +44 7460 560474
+
+            </li>
+            <!-- <li class="list-item">
+                <i class="fa-solid fa-clock"></i>
+                Mon-Sat, 8.00-18.00. Sunday CLOSED
+            </li> -->
+        </ul>
+        <p class="time">
+            <i class="fa-solid fa-clock icon"></i>
+                Mon-Sat, 8.00-18.00. Sunday CLOSED
+        </p>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <img src="./download (2).png" alt=""  class="logo">
+            </div>
+            <i class="fa-solid fa-bars"></i>
+            <div class="right">
+                <ul class="bottom-list">
+                    <li class="item">Home</li>
+                    <li class="item">
+                        Service<i class="fa-solid fa-angle-down"></i>
+                    </li>
+                    <li class="item">Contact
+                    </li>
+                    <li class="item">
+                        <button class="like">
+                        <i class="fa-solid fa-thumbs-up like1">Like 2.8k
+                        <!-- <p class="para">Like 2.8k</p> -->
+                            </i>
+                        </button>
+                    <li class="item">
+                        <button class="btn">Order Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="mobileapp">
+        <img src="./mobileapp (1).png" alt="" width="110px">
+         <div class="child">
+            <img src="./apple.png" alt="" width="35px" class="child1">
+            <img src="./google.png" alt="" width="35px" class="child2">
+         </div>
+
+        </div>
+        <h1 class="heading">
+            
+            Launching Your Writing 
+            Through Cutting-Edge  Research</h1>
+            <div class="liveandcontactbtn">
+                <button class="live-btn">Live Chat</button>
+            <button class="contact-button">Contcat Us</button>
+            </div>
+    </div>
+    <br><br><br>
+    <div class="welcome">
+    <h1 align="center" style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder;">Welcome to the Hybrid Research Center</h1>
+    <p align="center" style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+    padding: 10px;">At Hybrid Research, we are passionate about the power of writing to transform ideas into reality. We are a leading  research company dedicated to providing businesses and organizations with insightful and  compelling research, analysis <br> that drive growth and innovation.</p>
+    
+    <span class="line"></span>
+    </div>
+    <div class="services" style="border: 2px solid blue;">
+        <h1 align="center" style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder;">Our Services</h1>
+        <p align="center" style="font-size:large;font-family: Arial , Helvetica, sans-serif; color: rgb(107, 107, 102);
+        padding: 10px;">At Hybrid Research, we offer a wide range of services, including</p>
+     <div class="picAndReport">
+        <div class="ourser">
+         <div class="picture1">
+         <img src="./03356a12c46b4f6f9b9f.jpg" alt="" class="imgage"
+         width="100%"
+         height="100%">
+         </div>
+         <div class="second">
+         <h1  style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder; padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">Research reports</h1>
+    
+         <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+         padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">We conduct in-depth research on specific topics or industries to <br> provide our clients with actionable insights and <br>recommendations.</p>
+         <a href="" style="text-decoration: none;">
+         <span class="learn">Learn more <i class="fa-solid fa-arrow-right-long"></i></span>
+         <!-- <i class="fa-solid fa-arrow-right-long"></i> -->
+         </a>
+         <br> <br>
+         </div>
+        </div>
+    
+        <div class="ourser">
+         <div class="third">
+         <h1  style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder; padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">Case Studies</h1>
+     
+         <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+         padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">We develop detailed case studies that highlight our clients' <br>successes and showcase their expertise.</p>
+         <a href="" style="text-decoration: none;">
+         <span class="learn">Learn more <i class="fa-solid fa-arrow-right-long"></i></span>
+         <!-- <i class="fa-solid fa-arrow-right-long"></i> -->
+         </a>
+         </div>
+         <div class="picture2">
+         <img src="./businessman-working-with-smart-phone-and-laptop-and-digital-tablet-computer-in-office-with-digital-marketing-media-in-virtual-icon-free-video.jpg" alt="" class="imgage"
+         width="100%"
+         height="100%">
+         </div>
+        </div>
+        <div class="ourser">
+         <div class="picture3">
+         <img src="./How-Implementing-Advanced-Marketing-Strategies-Can-Benefit-Your-Business.jpeg" alt="" class="imgage"
+         width="100%"
+         height="100%">
+         </div>
+        
+         <div class="fourth">
+         <h1  style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder; padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">Content Marketing</h1>
+    
+         <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+         padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">Content marketing is a strategy that involves creating and <br> sharing valuable content to attract and retain customers. This <br> can include blog posts, social media updates, videos, and
+         <br> infographics.</p>
+         <a href="" style="text-decoration: none;">
+         <span class="learn">Learn more <i class="fa-solid      fa-arrow-right-long"></i></span>
+         <!-- <i class="fa-solid fa-arrow-right-long"></i> -->
+         </a>
+         </div>
+        </div>
+        <div class="ourser">
+         <div class="fifth">
+         <h1  style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder; padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">Publications</h1>
+         <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+         padding: 50px 0px 0px 0px; margin: 0px 0px 0px 20px;">Hybrid Research is a distinguished publication company <br>dedicated to delivering superior-quality research and scholarly <br> information globally.</p>
+         <a href="" style="text-decoration: none;">
+         <span class="learn">Learn more <i class="fa-solid      fa-arrow-right-long"></i></span>
+         <!-- <i class="fa-solid fa-arrow-right-long"></i> -->
+         </a>
+         </div>
+         <div class="picture4">
+         <img src="./Screenshot (48).png" alt=""
+         width="100%" height="100%">
+         </div>
+        </div>
+     </div>
+    </div>
+    
+     
+    <br><br><br><hr>
+    <div class="work">
+        <h1 align="center" style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder; padding-top: 20px;">HOW IT WORKS</h1>
+       <p align="center" style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+        padding: 10px;">Hybrid research is a research method that combines qualitative and quantitative research techniques to obtain a more comprehensive understanding <br>of a topic. Here are the steps for the Hybrid Research process:</p>
+        <div class="hireandDouble">
+            <div class="hire workChild">
+                <h1  class="work-heading">Hire the best experts</h1>
+                <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px;">The first step is to hire the best experts to conduct the research. This involves identifying individuals with relevant experience and  expertise in the field of research.</p>
+            </div>
+            <div class="double workChild">
+                <h1  class="work-heading">Double-check every paper before the delivery</h1>
+                <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+                padding: 10px;">The third step is to double-check every paper before the delivery.  The experts will check for any errors, inconsistencies, or gaps in the  research.</p>
+            </div>
+        </div>
+     <div class="WriteandKeep">
+        <div class="write workChild">
+            <h1  class="work-heading">Write every paper from scratch</h1>
+            <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px;">The second step is to write every paper from scratch. This involves conducting extensive research to gather relevant data and information</p>
+        </div>
+        <div class="keep workChild">
+            <h1  class="work-heading">Keep in touch 24/7</h1>
+            <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px;">The fourth step is to keep in touch with the client 24/7. This involves providing regular updates on the progress of the research  and addressing any concerns or questions that the client may have.</p>
+        </div>
+     </div>
+    </div>
+    <br><br><br><br>
+    <div class="contact">
+        <h1 align="center" style="color:white; font-family:Arial, Helvetica, sans-serif;font-weight: bolder; padding-top: 70px;">If you have any query related investment...
+            we are available 24/7 <button class="contact-btn">Contact Us</button> </h1>
+            <!-- <button class="contact-btn">Contact Us</button>     -->
+    </div>
+    <div class="guarantee">
+        <h1
+        align="center" style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder;font-size:50px; padding-top: 50px;">Our Guarantees</h1>
+        <div class="hireandDouble">
+            <div class="hire guaranteeChild">
+                <h1  class="work-heading">Money-back guarantee</h1>
+                <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px;">In case of any discrepancies between our promises and the results you get, apply for a refund and get a full or partial reimbursement.</p>
+            </div>
+            <div class="double guaranteeChild">
+                <h1  class="work-heading">Authenticity guarantee</h1>
+                <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+                padding: 10px;">Every paper we deliver is customized. To guarantee its originality, we double-check every article with our in-house plagiarism-detection software.</p>
+            </div>
+        </div>
+     <div class="WriteandKeep">
+        <div class="write guaranteeChild">
+            <h1  class="work-heading">Confidentiality guarantee</h1>
+            <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px;">To secure your privacy, we apply the GDPR and our own privacy policy. Your visits to our website are protected by the cybersecurity software we use.</p>
+        </div>
+        <div class="keep guaranteeChild">
+            <h1  class="work-heading">Free revisions</h1>
+            <p  style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px;">Our expert will edit your paper for free if you notice any flaws within it. Apply for a revision if you want to change anything in your paper.</p>
+        </div>
+     </div>
+    </div>
+    <div class="member">
+        <h1
+        align="center" style="color:#0f56a7; font-family:Arial, Helvetica, sans-serif;font-weight: bolder;font-size:50px; background: #f7f7f7; ">Team Member</h1>
+        <p style="font-size:large;font-family: Arial, Helvetica, sans-serif; color: rgb(107, 107, 102);
+            padding: 10px; text-align:center; background: #f7f7f7ad;">Our expert will edit your paper for free if you notice any flaws within it. Apply for a revision if you want to change anything in your paper.
+            To secure your privacy, we apply the GDPR and our own privacy policy. Your visits to our website are protected by the cybersecurity software we use.</p>
+        <div class="member-pic">
+          <div class="member-name">
+            <img src="./21-year-old-pakistani-boy-and-narrow-body-posing-f-PzchY-NpQZOOCVX_sWR85A-ZcwBQg6jR1mxdUfT1CA8aw.jpeg" alt="" width="100%">
+            <h1>Nouman</h1>
+          </div>
+          <div class="member-name">
+            <img src="./AOfeTecNhzhvAAAAAElFTkSuQmCC.png" alt="" width="100%">
+            <h1>Hammad</h1>
+          </div>
+          <div class="member-name">
+            <img src="./AOfeTecNhzhvAAAAAElFTkSuQmCC.png" alt="" width="100%">
+            <h1>Arshad</h1>
+          </div>
+          <div class="member-name">
+            <img src="./ua0sAAAAASUVORK5CYII=.png" alt="" width="100%">
+            <h1>Ahtasham</h1>
+           </div>
+        </div>
+    </div>
+    <div class="terms">
+        <div class="logoandcontact">
+            <ul class="list1">
+                <li class="list-items">
+                    <img src="./hybrid.png" alt="" width="100px" class="imagehrc">
+                </li>
+                <li class="list-items" style="border:2px solid black">
+                    <i class="fa-solid fa-envelope"></i>
+                    sales@hrc.com
+                </li>
+                <li class="list-items">
+                    <i class="fa-solid fa-envelope"></i>
+                    publications@hrc.com
+                </li>
+                <li class="list-items">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    sales:+447460560474
+                </li>
+            </ul>
+        </div>
+        <div class="homeandcond">
+            <div class="div1">
+                <ul class="list2">
+                    <li class="list-items2">home</li>
+                    <li class="list-items2">research</li>
+                    <li class="list-items2">writing</li>
+                    <li class="list-items2">publications</li>
+                    <li class="list-items2">contact us</li>
+                </ul>
+            </div>
+            <div class="div2">
+                <ul class="list2">
+                    <li class="list-items2">privacy policy</li>
+                    <li class="list-items2">terms and condition</li>
+                    <li class="list-items2">refund policy</li>
+                </ul>
+            </div>
+            <div class="div3">
+                <ul class="list2">
+                    <li class="list-items2">
+                        <i class="fa-brands fa-linkedin"></i>
+                        linkedin</li>
+                    <li class="list-items2">
+                    <i class="fa-brands fa-twitter"></i>
+                        
+                        twitter</li>
+                    <li class="list-items2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                        
+                        whatsapp</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
